@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>570e1654-ec41-45f6-9579-69431fc815a5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>hibryd.py</StartupFile>
+    <StartupFile>AR.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>diploma</Name>
     <RootNamespace>diploma</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,13 +25,27 @@
     <Compile Include="collaborative.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="contant-based.py">
+    <Compile Include="compare.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="diploma.py" />
-    <Compile Include="hibryd.py">
+    <Compile Include="content-based.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AR.py" />
+    <Compile Include="hybrid.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
